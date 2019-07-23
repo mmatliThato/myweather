@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>weather</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+   
+  <strong>City:</strong><input type="search" name="city" [(ngModel)]="city"> <strong>Province:</strong><input type="search" name="state" [(ngModel)]="state">
+ 
+  <button ion-button (click)="searchLocation(city, state)" color="secondary">search</button>
+  
+
+
+
+
+  <ion-grid *ngIf="weather">
+    <ion-row class="thato" width-50 offset-25 >
+<div class="soweto">
+    <h2 class="temp">{{temp}}&deg;</h2>
+    <div class="icon"><img src="http://openweathermap.org/img/w/{{icon}}"></div>
+</div>
+     
+        
+      
+        <div class="desc">{{description}}</div>
+        <h2 class="name">{{weather.name}}</h2>
+    
+         
+        
+      
+   
+
+    </ion-row>
+<ion-row >
+  <ion-col width=100>
+<ion-list>
+  <ion-item>
+  <strong>Temp:</strong>{{temp}}
+  </ion-item>
+  <ion-item>
+      <strong>Pressure:</strong>{{pressure}}
+      </ion-item>
+      <ion-item>
+          <strong>Humidity:</strong>{{humidity}}
+          </ion-item>
+   
+
+         
+</ion-list>
+  </ion-col>
+</ion-row>
+  </ion-grid>
+  
+   
+
+
+
+
+  
+</ion-content>
